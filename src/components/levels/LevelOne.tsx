@@ -142,7 +142,7 @@ const SOCIAL_ITEMS: SocialItem[] = [
 ];
 
 const TIME_LIMIT = 45;
-const TARGET_SCORE = 150;
+const TARGET_SCORE = 75;
 
 const timerImage = <Timer size={24} />;
 const checkImage = <Check size={24} />;

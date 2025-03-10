@@ -308,7 +308,7 @@ const HARMFUL_ITEMS: EcoItem[] = [
 ];
 
 const TIME_LIMIT = 45;
-const TARGET_SCORE = 200;
+const TARGET_SCORE = 75;
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 400;
 

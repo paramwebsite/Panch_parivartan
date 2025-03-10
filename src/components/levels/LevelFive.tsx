@@ -275,7 +275,7 @@ export default function LevelFour({ onComplete, onBack }: LevelFourProps) {
                 <div className="text-center mb-6">
                   <FaAward className="w-16 h-16 mx-auto mb-4" />
                   <h2 className="text-2xl font-bold mb-2">
-                    {score >= 200 ? '🎉 Civic Champion!' : 'Game Over!'}
+                    {score >= 75? '🎉 Civic Champion!' : 'Game Over!'}
                   </h2>
                   <div className="text-4xl mb-4">
                     {(correctAnswers / (correctAnswers + (combo > 0 ? combo - 1 : 0))) * 100 >= 90
