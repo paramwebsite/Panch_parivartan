@@ -316,7 +316,7 @@ export default function App() {
         setTimeout(() => {
           setShowDialog(false);
           setGameState('welcome');
-        }, 3000);
+        }, 5000);
         return;
       } else {
         // First-time completion for level five:
