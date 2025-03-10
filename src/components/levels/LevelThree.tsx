@@ -406,7 +406,7 @@ export default function LevelThree({ onComplete, onBack }: LevelThreeProps) {
       }
 
       setCurrentItems(newItems);
-    }, 2000);
+    }, 2500);
 
     return () => clearInterval(spawnInterval);
   }, [isGameOver]);

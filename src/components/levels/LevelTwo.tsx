@@ -300,7 +300,7 @@ export default function LevelTwo({
   const [items, setItems] = useState<ItemType[]>([]);
   const [positivesCaught, setPositivesCaught] = useState(0);
   const [lastCaughtItem, setLastCaughtItem] = useState<ItemType | null>(null);
-  const targetScore = 75;
+  const targetScore = 30;
   const gameAreaRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number>();
 
