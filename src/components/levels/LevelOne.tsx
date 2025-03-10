@@ -68,13 +68,13 @@ const SOCIAL_ITEMS: SocialItem[] = [
   },
   {
     id: "empathetic",
-    text: "Be empathetic towards the less fortunate.",
+    text: "Be empathetic towards the less fortunate",
     type: "do",
     icon: "/images/social/empathetic.png",
   },
   {
     id: "emergency",
-    text: "Help neighbors in times of emergency.",
+    text: "Help neighbors in times of emergency",
     type: "do",
     icon: "/images/social/emergency.png",
   },

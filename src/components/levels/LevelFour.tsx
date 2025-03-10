@@ -82,7 +82,7 @@ function LevelFour({
   const handleRestart = () => {
     setGameOver(false);
     setShowDialog(false);
-    setTimeLeft(60);
+    setTimeLeft(30);
     setGameState({
       score: 0,
       currentQuestion: null,
