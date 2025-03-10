@@ -421,7 +421,7 @@ export default function LevelOne({ onComplete, onBack }: LevelOneProps) {
                 <h2 className="text-3xl font-bold text-center mb-6">
                   {score >= TARGET_SCORE
                     ? "🎉 Level Complete!"
-                    : "😔 Level Failed"}
+                    : "You're on the right path! Reflect, learn, and try again!"}
                 </h2>
                 <div className="space-y-4 mb-6">
                   <p className="text-center text-xl">Final Score: {score}</p>

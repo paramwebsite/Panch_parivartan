@@ -9,7 +9,7 @@ export default defineConfig({
   },
   server: {
     host: true, // Enable local network access
-    port: 5185, // Optional: Specify a custom port
+    port: 5003, // Optional: Specify a custom port
     strictPort: true, // Optional: Ensure the port is not occupied
   },
 });

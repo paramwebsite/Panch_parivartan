@@ -1,143 +1,4 @@
-// import React, { useState, useCallback, useEffect } from "react";
-// import { IndiaMap } from "../../components/IndiaMap";
-// import { QuestionPanel } from "../../components/QuestionPanel";
-// import { FeedbackPopup } from "../../components/FeedbackPopup";
-// import { generateQuestion } from "../../data/stateData";
-// import { stateData } from "../../data/stateData";
-// import { GameState } from "../../types/game";
 
-// function LevelFour({
-//   onComplete,
-//   onBack,
-// }: {
-//   onComplete: (stats: any, timeout: boolean) => void;
-//   onBack: () => void;
-// }) {
-//   const [gameState, setGameState] = useState<GameState>({
-//     score: 0,
-//     currentQuestion: null,
-//     showFeedback: false,
-//     isCorrect: false,
-//   });
-
-//   const generateNewQuestion = useCallback(() => {
-//     const question = generateQuestion();
-//     setGameState((prev) => ({
-//       ...prev,
-//       currentQuestion: question,
-//     }));
-//   }, []);
-
-//   useEffect(() => {
-//     generateNewQuestion();
-//   }, [generateNewQuestion]);
-
-//   const handleStateClick = (stateId: string) => {
-//     if (!gameState.currentQuestion) return;
-
-//     const isCorrect = stateId === gameState.currentQuestion.correctState;
-
-//     setGameState((prev) => ({
-//       ...prev,
-//       score: isCorrect ? prev.score + 1 : prev.score,
-//       showFeedback: true,
-//       isCorrect,
-//     }));
-
-//     setTimeout(() => {
-//       setGameState((prev) => ({
-//         ...prev,
-//         showFeedback: false,
-//       }));
-//       generateNewQuestion();
-//     }, 2000);
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-gray-50 p-8">
-//       <div className="max-w-7xl mx-auto">
-//         {/* Header with Back and End Level buttons */}
-//         <div className="flex justify-between items-center mb-8">
-//           <div className="flex gap-4 items-center">
-//             <button
-//               onClick={onBack}
-//               className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
-//             >
-//               ← Back to Map
-//             </button>
-//             <button
-//               onClick={() => onComplete(gameState, false)}
-//               className="text-lg font-medium text-red-600 hover:text-red-800 transition-colors"
-//             >
-//               End Level
-//             </button>
-//           </div>
-//         </div>
-
-//         <h1 className="text-4xl font-bold text-center text-gray-900 mb-8">
-//           Discover India Quiz
-//         </h1>
-
-//         {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-//           <div className="relative">
-//             <IndiaMap
-//               onStateClick={handleStateClick}
-//               highlightState={
-//                 gameState.showFeedback
-//                   ? gameState.currentQuestion?.correctState || null
-//                   : null
-//               }
-//               isCorrect={gameState.showFeedback ? gameState.isCorrect : null}
-//             />
-//           </div>
-          
-//           <div>
-//             <QuestionPanel
-//               question={gameState.currentQuestion}
-//               score={gameState.score}
-//             />
-//           </div>
-//         </div> */}
-
-// <div className="flex justify-center items-center min-h-[35vh]">
-//   <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-7xl">
-//     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-//       <div className="relative">
-//         <IndiaMap
-//           onStateClick={handleStateClick}
-//           highlightState={
-//             gameState.showFeedback
-//               ? gameState.currentQuestion?.correctState || null
-//               : null
-//           }
-//           isCorrect={gameState.showFeedback ? gameState.isCorrect : null}
-//         />
-//       </div>
-
-//       <div>
-//         <QuestionPanel
-//           question={gameState.currentQuestion}
-//           score={gameState.score}
-//         />
-//       </div>
-//     </div>
-//   </div>
-// </div>
-
-
-//         {gameState.showFeedback && gameState.currentQuestion && (
-//           <FeedbackPopup
-//             isCorrect={gameState.isCorrect}
-//             stateName={stateData[gameState.currentQuestion.correctState].name}
-//             onClose={() =>
-//               setGameState((prev) => ({ ...prev, showFeedback: false }))
-//             }
-//           />
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
 
 // export default LevelFour;
 import React, { useState, useCallback, useEffect } from "react";
@@ -304,10 +165,10 @@ function LevelFour({
       {showDialog && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75">
           <div className="bg-white rounded-lg p-6 shadow-lg w-[400px] text-center">
-            <h2 className="text-2xl font-bold text-green-600 mb-2">🎉Level completed</h2>
+            <h2 className="text-2xl font-bold text-green-600 mb-2">You're on the right path! Reflect, learn, and try again!</h2>
             <p className="text-lg text-gray-800">Level: 4</p>
             <p className="text-gray-700 mt-2">
-              You've completed the level! Your final score:{" "}
+            Your final score:{" "}
               <span className="font-semibold">{gameState.score}</span>
             </p>
 
