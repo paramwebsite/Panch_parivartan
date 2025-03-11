@@ -1,8 +1,7 @@
-
-
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Timer, Check, X, RefreshCcw } from "lucide-react";
+import Logo from "../logo";
 
 interface LevelOneProps {
   onComplete: (stats: any, timeout: boolean) => void;
@@ -320,37 +319,40 @@ export default function LevelOne({ onComplete, onBack }: LevelOneProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-yellow-200 to-yellow-100 p-6"
-    style={{
-      backgroundImage: "url('/images/background/social_harmony1.jpeg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      backgroundBlendMode: "overlay",
-    }}
+    <div
+      className="min-h-screen bg-gradient-to-r from-yellow-200 to-yellow-100 p-6"
+      style={{
+        backgroundImage: "url('/images/background/social_harmony1.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundBlendMode: "overlay",
+      }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-yellow-200/80 to-yellow-200/80"></div>
-
+      <div className="absolute top-4 left-4 z-50">
+        <Logo /> {/* Replace with your actual component */}
+      </div>
       <div className="relative max-w-4xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div className="flex gap-4 items-center">
-          <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg">
-            <button
-              onClick={onBack}
-              className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
-            >
-              Back to Map
-            </button>
+            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg">
+              <button
+                onClick={onBack}
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                Back to Map
+              </button>
             </div>
             {/* End Level Button */}
             <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg">
-            <button
-              onClick={handleEndLevel}
-              className="text-lg font-medium text-red-600 hover:text-red-800 transition-colors"
-            >
-              End Level
-            </button>
+              <button
+                onClick={handleEndLevel}
+                className="text-lg font-medium text-red-600 hover:text-red-800 transition-colors"
+              >
+                End Level
+              </button>
             </div>
           </div>
           <div className="flex gap-6 items-center">

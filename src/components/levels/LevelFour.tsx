@@ -1,5 +1,3 @@
-
-
 // export default LevelFour;
 import React, { useState, useCallback, useEffect } from "react";
 import { IndiaMap } from "../../components/IndiaMap";
@@ -8,7 +6,7 @@ import { FeedbackPopup } from "../../components/FeedbackPopup";
 import { generateQuestion } from "../../data/stateData";
 import { stateData } from "../../data/stateData";
 import { GameState } from "../../types/game";
-
+import Logo from "../logo";
 function LevelFour({
   onComplete,
   onBack,
@@ -97,21 +95,24 @@ function LevelFour({
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <div className="flex gap-4 items-center">
-          <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg">
-            <button
-              onClick={onBack}
-              className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
-            >
-               Back to Map
-            </button>
+            <div className="absolute top-4 left-4 z-50">
+              <Logo /> {/* Replace with your actual component */}
             </div>
             <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg">
-            <button
-              onClick={() => handleGameOver(false)}
-              className="text-lg font-medium text-red-600 hover:text-red-800 transition-colors"
-            >
-              End Level
-            </button>
+              <button
+                onClick={onBack}
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                Back to Map
+              </button>
+            </div>
+            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg">
+              <button
+                onClick={() => handleGameOver(false)}
+                className="text-lg font-medium text-red-600 hover:text-red-800 transition-colors"
+              >
+                End Level
+              </button>
             </div>
           </div>
           <div className="text-xl font-semibold text-gray-900">
@@ -135,7 +136,9 @@ function LevelFour({
                         ? gameState.currentQuestion?.correctState || null
                         : null
                     }
-                    isCorrect={gameState.showFeedback ? gameState.isCorrect : null}
+                    isCorrect={
+                      gameState.showFeedback ? gameState.isCorrect : null
+                    }
                   />
                 </div>
 
@@ -165,20 +168,23 @@ function LevelFour({
       {showDialog && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75">
           <div className="bg-white rounded-lg p-6 shadow-lg w-[400px] text-center">
-            <h2 className="text-2xl font-bold text-green-600 mb-2">You're on the right path! Reflect, learn, and try again!</h2>
+            <h2 className="text-2xl font-bold text-green-600 mb-2">
+              You're on the right path! Reflect, learn, and try again!
+            </h2>
             <p className="text-lg text-gray-800">Level: 4</p>
             <p className="text-gray-700 mt-2">
-            Your final score:{" "}
+              Your final score:{" "}
               <span className="font-semibold">{gameState.score}</span>
             </p>
 
             <div className="mt-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl">
-                    <p className="text-center text-md text-gray-700 italic">
-                      "India’s strength lies in its diversity. By knowing our states, traditions, and heritage, we embrace Swadeshi and take pride in our roots. Celebrate local, stay united!."
-                    </p>
-                  </div>
+              <p className="text-center text-md text-gray-700 italic">
+                "India’s strength lies in its diversity. By knowing our states,
+                traditions, and heritage, we embrace Swadeshi and take pride in
+                our roots. Celebrate local, stay united!."
+              </p>
+            </div>
             <div className="mt-4 flex justify-center gap-4">
-              
               <button
                 onClick={handleRestart}
                 className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"

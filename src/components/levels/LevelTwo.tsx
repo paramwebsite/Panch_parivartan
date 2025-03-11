@@ -1,9 +1,7 @@
-
-
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Timer, Heart, RefreshCcw, Users } from "lucide-react";
-
+import Logo from "../logo";
 interface LevelTwoProps {
   onComplete: (stats: any, timeout: boolean) => void;
   onBack: () => void;
@@ -465,26 +463,27 @@ export default function LevelTwo({
   };
 
   return (
-    <div className="min-h-screen bg-teal-50 p-4 flex flex-col"
-    
-    >
+    <div className="min-h-screen bg-teal-50 p-4 flex flex-col">
       {/* Header */}
+      <div className="absolute top-4 left-4 z-50">
+        <Logo /> {/* Replace with your actual component */}
+      </div>
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-between items-center gap-4 mb-6">
-        <div className="flex gap-4  justify-around items-center">
-          <button
-            onClick={onBack}
-            className="px-4 py-2 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
-          >
-            ← Back to Map
-          </button>
-          {/* New End Level Button */}
-          <button
-            onClick={handleEndLevel}
-            className="px-4 py-2 bg-red-200 rounded-lg shadow hover:bg-red-300 transition-colors"
-          >
-            End Level
-          </button>
+          <div className="flex gap-4  justify-around items-center">
+            <button
+              onClick={onBack}
+              className="px-4 py-2 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+            >
+              ← Back to Map
+            </button>
+            {/* New End Level Button */}
+            <button
+              onClick={handleEndLevel}
+              className="px-4 py-2 bg-red-200 rounded-lg shadow hover:bg-red-300 transition-colors"
+            >
+              End Level
+            </button>
           </div>
           <div className="flex gap-4 items-center">
             <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow">
@@ -592,7 +591,7 @@ export default function LevelTwo({
                   <div className="text-center p-2 bg-teal-50 rounded-lg">
                     <div className="text-sm text-gray-600">Positive Values</div>
                     <div className="text-xl font-bold text-teal-600">
-                      {positivesCaught/2}
+                      {positivesCaught / 2}
                     </div>
                   </div>
                   <div className="text-center p-2 bg-blue-50 rounded-lg">
@@ -632,5 +631,3 @@ export default function LevelTwo({
     </div>
   );
 }
-
-

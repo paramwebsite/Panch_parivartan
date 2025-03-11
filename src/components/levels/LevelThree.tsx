@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Timer, Leaf, RefreshCcw } from "lucide-react";
-
+import Logo from "../logo";
 
 interface LevelThreeProps {
   onComplete: (stats: any, timeout: boolean) => void;
@@ -464,6 +463,9 @@ export default function LevelThree({ onComplete, onBack }: LevelThreeProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-green-100 to-blue-100 p-4">
+      <div className="absolute top-4 left-4 z-50">
+        <Logo /> {/* Replace with your actual component */}
+      </div>
       <div className="max-w-4xl mx-auto">
         {/* Header section */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
@@ -534,43 +536,41 @@ export default function LevelThree({ onComplete, onBack }: LevelThreeProps) {
           </AnimatePresence>
         </div> */}
 
-
-<div className="flex justify-center items-center min-h-[80vh]">
-  <div className="bg-white rounded-xl shadow-lg p-6 min-h-[400px] relative w-full max-w-4xl aspect-[2/1]">
-    <AnimatePresence>
-      {currentItems.map((item) => (
-        <motion.button
-          key={item.id}
-          className="absolute transform -translate-x-1/2 -translate-y-1/2"
-          style={{
-            left: item.x,
-            top: item.y,
-          }}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          onClick={() => handleItemClick(item)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <div className="flex flex-col items-center">
-            <div className="relative w-12 sm:w-16 h-12 sm:h-16 rounded-full overflow-hidden bg-white shadow-lg">
-              <img
-                src={item.icon}
-                alt={item.label}
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <span className="text-xs sm:text-sm text-gray-700 mt-1">
-              {item.label}
-            </span>
+        <div className="flex justify-center items-center min-h-[80vh]">
+          <div className="bg-white rounded-xl shadow-lg p-6 min-h-[400px] relative w-full max-w-4xl aspect-[2/1]">
+            <AnimatePresence>
+              {currentItems.map((item) => (
+                <motion.button
+                  key={item.id}
+                  className="absolute transform -translate-x-1/2 -translate-y-1/2"
+                  style={{
+                    left: item.x,
+                    top: item.y,
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  onClick={() => handleItemClick(item)}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <div className="flex flex-col items-center">
+                    <div className="relative w-12 sm:w-16 h-12 sm:h-16 rounded-full overflow-hidden bg-white shadow-lg">
+                      <img
+                        src={item.icon}
+                        alt={item.label}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-xs sm:text-sm text-gray-700 mt-1">
+                      {item.label}
+                    </span>
+                  </div>
+                </motion.button>
+              ))}
+            </AnimatePresence>
           </div>
-        </motion.button>
-      ))}
-    </AnimatePresence>
-  </div>
-</div>
-
+        </div>
 
         {/* Game over modal */}
         <AnimatePresence>

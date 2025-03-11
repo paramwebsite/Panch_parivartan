@@ -1,6 +1,7 @@
 import React from "react";
 import { Sparkles, ScrollText } from "lucide-react";
 import { motion } from "framer-motion";
+import Logo from "./logo";
 
 interface WelcomeScreenProps {
   onStart: () => void;
@@ -34,44 +35,7 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
     },
   };
 
-  // const dimensions = [
-  //   {
-  //     title: "Samajik samarasata ",
-  //     desc: "Social Harmony",
-  //     icon: "🕊️",
-  //     color: "from-purple-400/20 to-purple-600/20",
-  //     hoverColor: "rgba(168,85,247,0.3)",
-  //   },
-  //   {
-  //     title: "Kutumb Prabodhan",
-  //     desc: "Family Awakening",
-  //     icon: "👨‍👩‍👧‍👦",
-  //     color: "from-teal-400/20 to-teal-600/20",
-  //     hoverColor: "rgba(45,212,191,0.3)",
-  //   },
-  //   {
-  //     title: "Paryavaran ",
-  //     desc: "Environment",
-  //     icon: "🌱",
-  //     color: "from-green-400/20 to-green-600/20",
-  //     hoverColor: "rgba(74,222,128,0.3)",
-  //   },
-  //   {
-  //     title: "Swa",
-  //     desc: "Swadeshi Lifestyle",
-  //     icon: "🍱",
-  //     color: "from-blue-400/20 to-blue-600/20",
-  //     hoverColor: "rgba(59,130,246,0.3)",
-  //   },
-
-  //   {
-  //     title: "Nagarik Kartavya ",
-  //     desc: "Civic Duties",
-  //     icon: "⚖️",
-  //     color: "from-blue-400/20 to-blue-600/20",
-  //     hoverColor: "rgba(96,165,250,0.3)",
-  //   },
-  // ];
+ 
   const dimensions = [
     {
       title: "Samajik Samarasata",
@@ -123,7 +87,9 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/80 via-orange-950/70 to-yellow-900/80" />
-  
+      <div className="absolute top-4 left-4 z-50">
+      <Logo /> {/* Replace with your actual component */}
+    </div>
       <motion.div
         variants={container}
         initial="hidden"

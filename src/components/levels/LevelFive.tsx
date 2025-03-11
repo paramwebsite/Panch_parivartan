@@ -8,7 +8,7 @@ import {
 import { FaRedo, FaAward } from "react-icons/fa"; // Importing icons for Try Again and Award
 import { MdClose, MdCheck } from "react-icons/md"; // Importing icons for Swipe Left and Swipe Right
 import { Timer } from "lucide-react";
-
+import Logo from "../logo";
 interface LevelFourProps {
   onComplete: (stats: any, timeout: boolean) => void;
   onBack: () => void;
@@ -363,6 +363,9 @@ export default function LevelFour({ onComplete, onBack }: LevelFourProps) {
 
   return (
     <div className="min-h-screen bg-indigo-50 p-4">
+      <div className="absolute top-4 left-4 z-50">
+        <Logo /> {/* Replace with your actual component */}
+      </div>
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-between items-center mb-6">
           <button

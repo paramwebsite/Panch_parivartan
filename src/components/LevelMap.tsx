@@ -11,6 +11,7 @@ import {
   X,
   LogOut,
 } from "lucide-react";
+import Logo from "./logo";
 
 interface LevelMapProps {
   levels: GameLevel[];
@@ -190,20 +191,21 @@ export default function LevelMap({
       {/* Animated Background */}
       <div className="absolute inset-0 ">
         <div
-         className="min-h-screen relative overflow-hidden "
-         style={{
-           backgroundImage: "url('/images/background/civic_duties.jpeg')",
-           backgroundSize: "cover",
-           backgroundPosition: "center",
-           backgroundRepeat: "no-repeat",
-           backgroundBlendMode: "multiply",
-          
-        
-         }}
+          className="min-h-screen relative overflow-hidden "
+          style={{
+            backgroundImage: "url('/images/background/civic_duties.jpeg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundBlendMode: "multiply",
+          }}
         />
       </div>
+
       <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/80 via-orange-950/70 to-yellow-900/80" />
-    
+      <div className="absolute top-4 left-4 z-50">
+        <Logo /> {/* Replace with your actual component */}
+      </div>
       {/* Instructions Modal */}
       <AnimatePresence>
         {selectedLevel !== null && (
