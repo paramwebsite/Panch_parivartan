@@ -157,6 +157,7 @@ export default function LevelOne({ onComplete, onBack }: LevelOneProps) {
   const [correctChoices, setCorrectChoices] = useState(0);
   const [perfectChoices, setPerfectChoices] = useState(0);
   const [consecutiveCorrect, setConsecutiveCorrect] = useState(0);
+  const [hasAnswerd,sethasanswered]=useState(false)
   const [remainingItems, setRemainingItems] = useState<SocialItem[]>([
     ...SOCIAL_ITEMS,
   ]);
@@ -255,8 +256,8 @@ export default function LevelOne({ onComplete, onBack }: LevelOneProps) {
 
   // Handle a choice (Do or Don't)
   const handleChoice = (choice: "do" | "dont") => {
-    if (!currentItem) return;
-
+    if (hasAnswerd || !currentItem) return;
+     sethasanswered(true)
     const isCorrect = choice === currentItem.type;
     let points = 10;
 
@@ -277,7 +278,11 @@ export default function LevelOne({ onComplete, onBack }: LevelOneProps) {
     setScore((prev) => Math.max(0, prev + points));
 
     // Brief delay for feedback, then spawn next item.
-    setTimeout(spawnNewItem, 500);
+    // setTimeout(spawnNewItem, 500);
+    setTimeout(()=>{
+      spawnNewItem();
+      sethasanswered(false);
+    },500)
   };
 
   // End Level early: mark game as over and call onComplete.
